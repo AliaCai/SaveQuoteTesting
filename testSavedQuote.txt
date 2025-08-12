@@ -1,0 +1,407 @@
+
+> api-tesing@1.0.0 cypress:test:run
+> env-cmd -f .env.test npx cypress run  --reporter cypress-mochawesome-reporter  --spec cypress/e2e/APITesting/SaveQuote/TestSavedQuote.cy.js --browser chrome
+
+SSH tunnel is up! Listening on 127.0.0.1:3307
+Knex test query successful!
+Knex over SSH is ready!
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        14.4.1                                                                         │
+  │ Browser:        Chrome 138 (headless)                                                          │
+  │ Node Version:   v18.20.8 (/Users/aliacai/.nvm/versions/node/v18.20.8/bin/node)                 │
+  │ Specs:          1 found (TestSavedQuote.cy.js)                                                 │
+  │ Searched:       cypress/e2e/APITesting/SaveQuote/TestSavedQuote.cy.js                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Remove output folder /Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/reports/html
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  TestSavedQuote.cy.js                                                            (1 of 1)
+
+
+  saved quote
+    ✓ fromAddress1: required or not - should fail > 'fromAddress1' is missing.
+    ✓ fromAddress1: null - should fail > 'fromAddress1' is missing.
+    ✓ fromAddress1: empty string - should fail > 'fromAddress1' length must be between 2 and 40 characters., 'fromAddress1' is missing., 'fromAddress1' is invalid.
+    ✓ fromAddress1: whitespace only - should fail > 'fromAddress1' is missing., 'fromAddress1' is invalid.
+    ✓ fromAddress1: special characters - should fail > 'fromAddress1' is invalid., 'fromAddress1' must contain only letters, numbers, spaces, or common punctuation., 'fromAddress1'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromAddress1: 1< min 2 - should false > 'fromAddress1' length must be between 2 and 40 characters., 'fromAddress1' is invalid.
+    ✓ fromAddress1: 41>max 40 - should fail > 'fromAddress1' length must be between 2 and 40 characters., 'fromAddress1' is invalid., 'fromAddress1'  must not exceed 40 characters., 'fromAddress1' must not exceed 40 characters.
+    ✓ fromAddress2: special characters - should fail > 'fromAddress2' is invalid., 'fromAddress2' must contain only letters, numbers, spaces, or common punctuation., 'fromAddress2'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromAddress2: 31>max 30 - should fail > 'fromAddress2' length must be between 0 and 30 characters., 'fromAddress2' is invalid., 'fromAddress2'  must not exceed 30 characters., 'fromAddress2' must not exceed 30 characters.
+    ✓ fromCountry: required or not - should fail > 'fromCountry' is missing.
+    ✓ fromCountry: null - should fail > 'fromCountry' is missing.
+    ✓ fromCountry: empty string - should fail > 'fromCountry' length must be between undefined and undefined characters., 'fromCountry' is missing., 'fromCountry' is invalid. Only `CA` is expected., 'fromCountry' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromCountry: whitespace only - should fail > 'fromCountry' is missing., 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCountry: special characters - should fail > 'fromCountry' is invalid. Only `CA` is expected., 'fromCountry' must contain only letters, numbers, spaces, or common punctuation., 'fromCountry'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromCountry: ca - should fail > 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCountry: 2 chars (!=CA) : AB  - should fail > 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCountry: len(country)>2 : ABC:  - should fail > 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCountry: len(country)<2 : K:  - should fail > 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCountry: numeric string:12  - should fail > 'fromCountry' is invalid. Only `CA` is expected.
+    ✓ fromCity: required or not - should fail > 'fromCity' is missing.
+    ✓ fromCity: null - should fail > 'fromCity' is missing.
+    ✓ fromCity: empty string - should fail > 'fromCity' length must be between 1 and 50 characters., 'fromCity' is missing., 'fromCity' is invalid., 'fromCity' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromCity: whitespace only - should fail > 'fromCity' is missing., 'fromCity' is invalid.
+    ✓ fromCity: special characters - should fail > 'fromCity' is invalid., 'fromCity' must contain only letters, numbers, spaces, or common punctuation., 'fromCity'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromCity: 0< min 1 - should false > 'fromCity' must contain only letters, numbers, spaces, or common punctuation., 'fromCity' length must be between 1 and 50 characters., 'fromCity' is invalid., 'fromCity' is missing.
+    ✓ fromCity: 51>max 50 - should fail > 'fromCity' length must be between 1 and 50 characters., 'fromCity' is invalid., 'fromCity'  must not exceed 50 characters., 'fromCity' must not exceed 50 characters.
+    ✓ fromProvince: required or not - should fail > 'fromProvince' is missing.
+    ✓ fromProvince: null - should fail > 'fromProvince' is missing.
+    ✓ fromProvince: empty string - should fail > 'fromProvince' length must be between null and null characters., 'fromProvince' is missing., 'fromProvince' is invalid., 'fromProvince' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromProvince: whitespace only - should fail > 'fromProvince' is missing., 'fromProvince' is invalid.
+    ✓ fromProvince: special characters - should fail > 'fromProvince' is invalid., 'fromProvince' must contain only letters, numbers, spaces, or common punctuation., 'fromProvince'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromProvince: mixed uppercase lowercase: On - should fail  > 'fromProvince' is invalid.
+    ✓ fromProvince: numeric string:12 - should fail  > 'fromProvince' is invalid.
+    ✓ fromProvince: len(province)>2 : ERK- should fail  > 'fromProvince' is invalid.
+    ✓ fromProvince: len(country)<2 : D- should fail  > 'fromProvince' is invalid.
+    ✓ fromPostalCode: required or not - should fail > 'fromPostalCode' is missing.
+    ✓ fromPostalCode: null - should fail > 'fromPostalCode' is missing.
+    ✓ fromPostalCode: empty string - should fail > 'fromPostalCode' is missing., 'fromPostalCode' format is invalid.
+    ✓ fromPostalCode: whitespace only - should fail > 'fromPostalCode' is missing., 'fromPostalCode' format is invalid.
+    ✓ fromPostalCode: special characters - should fail > 'fromPostalCode' format is invalid., 'fromPostalCode' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromPostalCode: 6 chars (!=PostalCode): AAA AAA - should fail  > 'fromPostalCode' format is invalid.
+    ✓ fromPostalCode: wrong format1 : K4G0XX- should fail  > 'fromPostalCode' format is invalid.
+    ✓ fromPostalCode:wrong format2: L8H    0X1- should fail  > 'fromPostalCode' format is invalid.
+    ✓ fromCompany: required or not - should fail > 'fromCompany' is missing.
+    ✓ fromCompany: null - should fail > 'fromCompany' is missing.
+    ✓ fromCompany: empty string - should fail > 'fromCompany' length must be between 3 and 30 characters., 'fromCompany' is missing., 'fromCompany' is invalid., 'fromCompany' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromCompany: whitespace only - should fail > 'fromCompany' is missing., 'fromCompany' is invalid.
+    ✓ fromCompany: special characters - should fail > 'fromCompany' is invalid., 'fromCompany' must contain only letters, numbers, spaces, or common punctuation., 'fromCompany'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromCompany: 2< min 3 - should false > 'fromCompany' length must be between 3 and 30 characters., 'fromCompany' is invalid.
+    ✓ fromCompany: 31>max 30 - should fail > 'fromCompany' length must be between 3 and 30 characters., 'fromCompany' is invalid., 'fromCompany'  must not exceed 30 characters., 'fromCompany' must not exceed 30 characters.
+    ✓ fromEmail: required or not - should fail > 'fromEmail' is missing.
+    ✓ fromEmail: null - should fail > 'fromEmail' is missing.
+    ✓ fromEmail: empty string - should fail > 'fromEmail' length must be between 6 and 64 characters., 'fromEmail' is missing., 'fromEmail' is invalid., 'fromEmail' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromEmail: whitespace only - should fail > 'fromEmail' is missing., 'fromEmail' is invalid.
+    ✓ fromEmail: special characters - should fail > 'fromEmail' is invalid., 'fromEmail' must contain only letters, numbers, spaces, or common punctuation., 'fromEmail'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromEmail: 5< min 6 - should false > 'fromEmail' length must be between 6 and 64 characters., 'fromEmail' is invalid.
+    ✓ fromEmail: 65>max 64 - should fail > 'fromEmail' length must be between 6 and 64 characters., 'fromEmail' is invalid., 'fromEmail'  must not exceed 64 characters., 'fromEmail' must not exceed 64 characters.
+    ✓ fromEmail: No @ symbol : userexample.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Missing domain : IamTheuser@ - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Starts with @ : @example.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Dot at end : user@example.com. - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Double dots in domain : user@site..com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Unicode domain : user@💥🔥.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Space in email : user name@example.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Newline : user@\nexample.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Multiple @ : user@@example.com - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Missing subdomain : ImSuchA@.co - should fail  > 'fromEmail' is invalid.
+    ✓ fromEmail: Missing top-level domain : ImSuchA@B. - should fail  > 'fromEmail' is invalid.
+    ✓ fromPhone: required or not - should fail > 'fromPhone' is missing.
+    ✓ fromPhone: null - should fail > 'fromPhone' is missing.
+    ✓ fromPhone: empty string - should fail > 'fromPhone' length must be between undefined and undefined characters., 'fromPhone' is missing., 'fromPhone' is invalid., 'fromPhone' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromPhone: whitespace only - should fail > 'fromPhone' is missing., 'fromPhone' is invalid.
+    ✓ fromPhone: special characters - should fail > 'fromPhone' is invalid., 'fromPhone' must contain only letters, numbers, spaces, or common punctuation., 'fromPhone'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromPhone: Missing plus : 1234567890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Spaces included : +1 234567890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Dashes included : +1-234-567-890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Parentheses included : +1(234)567890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Letters included : +1abc567890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: All letters : abcedfhjig - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Too short : +12 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Too long (more than 20 digits) : +123456789012345612345 - should fail  > 'fromPhone' is invalid.
+    ✓ fromPhone: Double plus : ++1234567890 - should fail  > 'fromPhone' is invalid.
+    ✓ fromAttention: required or not - should fail > 'fromAttention' is missing.
+    ✓ fromAttention: null - should fail > 'fromAttention' is missing.
+    ✓ fromAttention: empty string - should fail > 'fromAttention' length must be between 3 and 30 characters., 'fromAttention' is missing., 'fromAttention' is invalid., 'fromAttention' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ fromAttention: whitespace only - should fail > 'fromAttention' is missing., 'fromAttention' is invalid.
+    ✓ fromAttention: special characters - should fail > 'fromAttention' is invalid., 'fromAttention' must contain only letters, numbers, spaces, or common punctuation., 'fromAttention'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ fromAttention: 2< min 3 - should false > 'fromAttention' length must be between 3 and 30 characters., 'fromAttention' is invalid.
+    ✓ fromAttention: 31>max 30 - should fail > 'fromAttention' length must be between 3 and 30 characters., 'fromAttention' is invalid., 'fromAttention'  must not exceed 30 characters., 'fromAttention' must not exceed 30 characters.
+    ✓ fromInstructions: 151>max 150 - should fail > 'fromInstructions' length must be between 0 and 150 characters., 'fromInstructions' is invalid., 'fromInstructions'  must not exceed 150 characters., 'fromInstructions' must not exceed 150 characters.
+    ✓ toAddress1: required or not - should fail > 'toAddress1' is missing.
+    ✓ toAddress1: null - should fail > 'toAddress1' is missing.
+    ✓ toAddress1: empty string - should fail > 'toAddress1' length must be between 2 and 40 characters., 'toAddress1' is missing., 'toAddress1' is invalid.
+    ✓ toAddress1: whitespace only - should fail > 'toAddress1' is missing., 'toAddress1' is invalid.
+    ✓ toAddress1: special characters - should fail > 'toAddress1' is invalid., 'toAddress1' must contain only letters, numbers, spaces, or common punctuation., 'toAddress1'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toAddress1: 1< min 2 - should false > 'toAddress1' length must be between 2 and 40 characters., 'toAddress1' is invalid.
+    ✓ toAddress1: 41>max 40 - should fail > 'toAddress1' length must be between 2 and 40 characters., 'toAddress1' is invalid., 'toAddress1'  must not exceed 40 characters., 'toAddress1' must not exceed 40 characters.
+    ✓ toAddress2: special characters - should fail > 'toAddress2' is invalid., 'toAddress2' must contain only letters, numbers, spaces, or common punctuation., 'toAddress2'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toAddress2: 31>max 30 - should fail > 'toAddress2' length must be between 0 and 30 characters., 'toAddress2' is invalid., 'toAddress2'  must not exceed 30 characters., 'toAddress2' must not exceed 30 characters.
+    ✓ toCountry: required or not - should fail > 'toCountry' is missing. Only `CA` is expected.
+    ✓ toCountry: null - should fail > 'toCountry' is missing. Only `CA` is expected.
+    ✓ toCountry: empty string - should fail > 'toCountry' length must be between null and null characters., 'toCountry' is missing. Only `CA` is expected., 'toCountry' is invalid. Only `CA` is expected., 'toCountry' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toCountry: whitespace only - should fail > 'toCountry' is missing. Only `CA` is expected., 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCountry: special characters - should fail > 'toCountry' is invalid. Only `CA` is expected., 'toCountry' must contain only letters, numbers, spaces, or common punctuation., 'toCountry'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toCountry: ca - should fail > 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCountry: 2 chars (!=CA) : AB  - should fail > 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCountry: len(country)>2 : ABC:  - should fail > 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCountry: len(country)<2 : K:  - should fail > 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCountry: numeric string:12  - should fail > 'toCountry' is invalid. Only `CA` is expected.
+    ✓ toCity: required or not - should fail > 'toCity' is missing.
+    ✓ toCity: null - should fail > 'toCity' is missing.
+    ✓ toCity: empty string - should fail > 'toCity' length must be between 1 and 50 characters., 'toCity' is missing., 'toCity' is invalid., 'toCity' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toCity: whitespace only - should fail > 'toCity' is missing., 'toCity' is invalid.
+    ✓ toCity: special characters - should fail > 'toCity' is invalid., 'toCity' must contain only letters, numbers, spaces, or common punctuation., 'toCity'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toCity: 0< min 1 - should false > 'toCity' must contain only letters, numbers, spaces, or common punctuation., 'toCity' length must be between 1 and 50 characters., 'toCity' is invalid., 'toCity' is missing.
+    ✓ toCity: 51>max 50 - should fail > 'toCity' length must be between 1 and 50 characters., 'toCity' is invalid., 'toCity'  must not exceed 50 characters., 'toCity' must not exceed 50 characters.
+    ✓ toProvince: required or not - should fail > 'toProvince' is missing.
+    ✓ toProvince: null - should fail > 'toProvince' is missing.
+    ✓ toProvince: empty string - should fail > 'toProvince' length must be between null and null characters., 'toProvince' is missing., 'toProvince' is invalid., 'toProvince' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toProvince: whitespace only - should fail > 'toProvince' is missing., 'toProvince' is invalid.
+    ✓ toProvince: special characters - should fail > 'toProvince' is invalid., 'toProvince' must contain only letters, numbers, spaces, or common punctuation., 'toProvince'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toProvince: mixed uppercase lowercase: On - should fail  > 'toProvince' is invalid.
+    ✓ toProvince: numeric string:12 - should fail  > 'toProvince' is invalid.
+    ✓ toProvince: len(province)>2 : ERK- should fail  > 'toProvince' is invalid.
+    ✓ toProvince: len(country)<2 : D- should fail  > 'toProvince' is invalid.
+    ✓ toPostalCode: required or not - should fail > 'toPostalCode' is missing.
+    ✓ toPostalCode: null - should fail > 'toPostalCode' is missing.
+    ✓ toPostalCode: empty string - should fail > 'toPostalCode' is missing., 'toPostalCode' format is invalid.
+    ✓ toPostalCode: whitespace only - should fail > 'toPostalCode' is missing., 'toPostalCode' format is invalid.
+    ✓ toPostalCode: special characters - should fail > 'toPostalCode' format is invalid., 'toPostalCode' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toPostalCode: 6 chars (!=PostalCode): AAA AAA - should fail  > 'toPostalCode' format is invalid.
+    ✓ toPostalCode: wrong format1 : K4G0XX- should fail  > 'toPostalCode' format is invalid.
+    ✓ toPostalCode:wrong format2: L8H    0X1- should fail  > 'toPostalCode' format is invalid.
+    ✓ toCompany: required or not - should fail > 'toCompany' is missing.
+    ✓ toCompany: null - should fail > 'toCompany' is missing.
+    ✓ toCompany: empty string - should fail > 'toCompany' length must be between 3 and 30 characters., 'toCompany' is missing., 'toCompany' is invalid., 'toCompany' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toCompany: whitespace only - should fail > 'toCompany' is missing., 'toCompany' is invalid.
+    ✓ toCompany: special characters - should fail > 'toCompany' is invalid., 'toCompany' must contain only letters, numbers, spaces, or common punctuation., 'toCompany'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toCompany: 2< min 3 - should false > 'toCompany' length must be between 3 and 30 characters., 'toCompany' is invalid.
+    ✓ toCompany: 31>max 30 - should fail > 'toCompany' length must be between 3 and 30 characters., 'toCompany' is invalid., 'toCompany'  must not exceed 30 characters., 'toCompany' must not exceed 30 characters.
+    ✓ toEmail: whitespace only - should fail > 'toEmail' is missing., 'toEmail' is invalid.
+    ✓ toEmail: special characters - should fail > 'toEmail' is invalid., 'toEmail' must contain only letters, numbers, spaces, or common punctuation., 'toEmail'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toEmail: 5< min 6 - should false > 'toEmail' length must be between 6 and 64 characters., 'toEmail' is invalid.
+    ✓ toEmail: 65>max 64 - should fail > 'toEmail' length must be between 6 and 64 characters., 'toEmail' is invalid., 'toEmail'  must not exceed 64 characters., 'toEmail' must not exceed 64 characters.
+    ✓ toEmail: No @ symbol : userexample.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Missing domain : IamTheuser@ - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Starts with @ : @example.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Dot at end : user@example.com. - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Double dots in domain : user@site..com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Unicode domain : user@💥🔥.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Space in email : user name@example.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Newline : user@\nexample.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Multiple @ : user@@example.com - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Missing subdomain : ImSuchA@.co - should fail  > 'toEmail' is invalid.
+    ✓ toEmail: Missing top-level domain : ImSuchA@B. - should fail  > 'toEmail' is invalid.
+    ✓ toPhone: required or not - should fail > 'toPhone' is missing.
+    ✓ toPhone: null - should fail > 'toPhone' is missing.
+    ✓ toPhone: empty string - should fail > 'toPhone' length must be between undefined and undefined characters., 'toPhone' is missing., 'toPhone' is invalid., 'toPhone' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toPhone: whitespace only - should fail > 'toPhone' is missing., 'toPhone' is invalid.
+    ✓ toPhone: special characters - should fail > 'toPhone' is invalid., 'toPhone' must contain only letters, numbers, spaces, or common punctuation., 'toPhone'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toPhone: Missing plus : 1234567890 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Spaces included : +1 234567890 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Dashes included : +1-234-567-890 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Parentheses included : +1(234)567890 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Letters included : +1abc567890 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: All letters : abcedfhjig - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Too short : +12 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Too long (more than 20 digits) : +123456789012345612345 - should fail  > 'toPhone' is invalid.
+    ✓ toPhone: Double plus : ++1234567890 - should fail  > 'toPhone' is invalid.
+    ✓ toAttention: required or not - should fail > 'toAttention' is missing.
+    ✓ toAttention: null - should fail > 'toAttention' is missing.
+    ✓ toAttention: empty string - should fail > 'toAttention' length must be between 3 and 30 characters., 'toAttention' is missing., 'toAttention' is invalid., 'toAttention' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ toAttention: whitespace only - should fail > 'toAttention' is missing., 'toAttention' is invalid.
+    ✓ toAttention: special characters - should fail > 'toAttention' is invalid., 'toAttention' must contain only letters, numbers, spaces, or common punctuation., 'toAttention'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ toAttention: 2< min 3 - should false > 'toAttention' length must be between 3 and 30 characters., 'toAttention' is invalid.
+    ✓ toAttention: 31>max 30 - should fail > 'toAttention' length must be between 3 and 30 characters., 'toAttention' is invalid., 'toAttention'  must not exceed 30 characters., 'toAttention' must not exceed 30 characters.
+    ✓ toInstructions: 151>max 150 - should fail > 'toInstructions' length must be between 0 and 150 characters., 'toInstructions' is invalid., 'toInstructions'  must not exceed 150 characters., 'toInstructions' must not exceed 150 characters.
+    ✓ confirmDelivery: required or not - should false  > 'confirmDelivery' is missing. Only a bool value (true/false) is expected.
+    ✓ confirmDelivery: empty string - should false > 'confirmDelivery' is missing. Only a bool value (true/false) is expected.
+    ✓ confirmDelivery: whitespace only - should false > 'confirmDelivery' is missing. Only a bool value (true/false) is expected.
+    ✓ confirmDelivery: invalid alphabetic string:ABCDEFGHI - should fail >JSON parse error
+    ✓ confirmDelivery: numeric string:12345677 - should fail >JSON parse error
+    ✓ confirmDelivery: []: - should fail >JSON parse error
+    ✓ confirmDelivery: {}:[object Object] - should fail >JSON parse error
+    ✓ residential: invalid alphabetic string:ABCDEFGHI - should fail >JSON parse error
+    ✓ residential: numeric string:12345677 - should fail >JSON parse error
+    ✓ residential: []: - should fail >JSON parse error
+    ✓ residential: {}:[object Object] - should fail >JSON parse error
+    ✓ shipDate: required or not - should fail > 'shipDate' is missing. A valid date is expected.
+    ✓ shipDate: null - should fail > 'shipDate' is missing. A valid date is expected.
+    ✓ shipDate: empty string - should fail > 'shipDate' length must be between null and null characters., 'shipDate' is missing. A valid date is expected., 'shipDate' is invalid. A valid date is expected., 'shipDate' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ shipDate: whitespace only - should fail > 'shipDate' is missing. A valid date is expected., 'shipDate' is invalid. A valid date is expected.
+    ✓ shipDate: special characters - should fail >JSON parse error
+    ✓ shipDate: Non Leap year date - should fail >JSON parse error
+    ✓ shipDate: <min supperted date: yesterday's date - should fail > 'shipDate' is invalid. A valid date equal or greater than today is expected.
+    ✓ shipDate: invalid format1 :numeric string: input1 - should fail >JSON parse error
+    ✓ shipDate: invalid format2 :2027/12/31 - should fail >JSON parse error
+    ✓ shipDate: invalid format3 :12-31-2029 - should fail >JSON parse error
+    ✓ shipDate: invalid format4 :alphabetic string: AKBKDKCKDKEKFGHIJKLM - should fail >JSON parse error
+    ✓ shipDate: invalid month :2027-13-11 - should fail >JSON parse error
+    ✓ shipDate: invalid day :2028-12-33 - should fail >JSON parse error
+    ✓ packageType: required or not - should fail > 'packageType' is missing.
+    ✓ packageType: null - should fail > 'packageType' is missing.
+    ✓ packageType: empty string - should fail > 'packageType' length must be between null and null characters., 'packageType' is missing., 'packageType' is invalid. Only 'Package' is expected., 'packageType' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ packageType: whitespace only - should fail > 'packageType' is missing., 'packageType' is invalid. Only 'Package' is expected.
+    ✓ packageType: special characters - should fail > 'packageType' is invalid. Only 'Package' is expected., 'packageType' must contain only letters, numbers, spaces, or common punctuation., 'packageType'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ packageType: mixed uppercase lowercase: pAcKaGe - should fail  > 'packageType' is invalid. Only 'Package' is expected.
+    ✓ packageType: numeric string:12 - should fail  > 'packageType' is invalid. Only 'Package' is expected.
+    ✓ packageType: alphabetic string - should fail  > 'packageType' is invalid. Only 'Package' is expected.
+    ✓ packageType: len < 7: Packag - should fail  > 'packageType' is invalid. Only 'Package' is expected.
+    ✓ packageType: len > 7: Packagee - should fail  > 'packageType' is invalid. Only 'Package' is expected.
+    ✓ insuranceType: required or not - should fail > 'insuranceType' is missing.
+    ✓ insuranceType: null - should fail > 'insuranceType' is missing.
+    ✓ insuranceType: empty string - should fail > 'insuranceType' is missing., 'insuranceType' must be None or Carrier.
+    ✓ insuranceType: whitespace only - should fail > 'insuranceType' is missing., 'insuranceType' must be None or Carrier.
+    ✓ insuranceType: special characters - should fail > 'insuranceType' must be None or Carrier.
+    ✓ insuranceType: mixed uppercase lowercase: CarriEr - should fail  > 'insuranceType' must be None or Carrier.
+    ✓ insuranceType: numeric string:12 - should fail  > 'insuranceType' must be None or Carrier.
+    ✓ insuranceType: alphabetic string - should fail  > 'insuranceType' must be None or Carrier.
+    ✓ commodityType: required or not - should fail > 'commodityType' is missing.
+    ✓ commodityType: null - should fail > 'commodityType' is missing.
+    ✓ commodityType: empty string - should fail > 'commodityType' length must be between null and null characters., 'commodityType' is missing., 'commodityType' is invalid. Only 'General Merchandise' is expected., 'commodityType' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ commodityType: whitespace only - should fail > 'commodityType' is missing., 'commodityType' is invalid. Only 'General Merchandise' is expected.
+    ✓ commodityType: special characters - should fail > 'commodityType' is invalid. Only 'General Merchandise' is expected., 'commodityType' must contain only letters, numbers, spaces, or common punctuation., 'commodityType'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ commodityType: mixed uppercase lowercase: elEcTroNics - should fail  > 'commodityType' is invalid. Only 'General Merchandise' is expected.
+    ✓ commodityType: numeric string:12 - should fail  > 'commodityType' is invalid. Only 'General Merchandise' is expected.
+    ✓ commodityType: alphabetic string - should fail  > 'commodityType' is invalid. Only 'General Merchandise' is expected.
+    ✓ packageQuantity: required or not - should false > 'packageQuantity' is missing.
+    ✓ packageQuantity: null - should false  > 'packageQuantity' is missing.
+    ✓ packageQuantity: empty string  - should fail > 'packageQuantity' is missing.
+    ✓ packageQuantity: whitespace only - should fail > 'packageQuantity' is missing.
+    ✓ packageQuantity: special characters - should fail >JSON parse error
+    ✓ packageQuantity: 0 <min num: 1 - should fail  > 'packageQuantity' must be between 1 and 20., 'packageQuantity' does not match the actual number of packages.
+    ✓ packageQuantity:  alphabetic string - should fail  >JSON parse error
+    ✓ packageQuantity: 21 >max num: 21 - should fail  > 'packageQuantity' must be between 1 and 20., 'packageQuantity' does not match the actual number of packages.
+    ✓ packageQuantity: zero: 0 - should fail  > 'packageQuantity' must be between 1 and 20., 'packageQuantity' does not match the actual number of packages.
+    ✓ packageQuantity: with decimals: 120.11 - should fail  > 'packageQuantity' is invalid. Only an integer is expected., 'packageQuantity' does not match the actual number of packages.
+    ✓ packageQuantity: not align with # of packages - should fail > 'packageQuantity' does not match the actual number of packages.
+    ✓ packages:length: required or not - should false > 'length' is required.
+    ✓ packages:length: null - should false  > 'length' is required.
+    ✓ packages:length: empty string  - should fail > 'length' is required.
+    ✓ packages:length: whitespace only - should fail > 'length' is required.
+    ✓ packages:length: special characters - should fail >JSON parse error (6596ms)
+    ✓ packages:length: 0 <min num: 0.01 - should fail  > 'length' must be at least 0.01., 'length' is invalid.
+    ✓ packages:length:  alphabetic string - should fail  >JSON parse error:
+    ✓ packages:length: 150.01 >max num: 150.01 - should fail  > 'length' must not exceed 150., 'length'  must not exceed 150., 'length' is invalid.
+    ✓ packages:length: zero: 0 - should fail  > 'length' must be at least 0.01.
+    ✓ packages:length: with 3 decimals: 120.111 - should fail  > 'length' must have at most 2 decimal places.
+    ✓ packages:width: required or not - should false > 'width' is required.
+    ✓ packages:width: null - should false  > 'width' is required.
+    ✓ packages:width: empty string  - should fail > 'width' is required.
+    ✓ packages:width: whitespace only - should fail > 'width' is required.
+    ✓ packages:width: special characters - should fail >JSON parse error
+    ✓ packages:width: 0 <min num: 0.01 - should fail  > 'width' must be at least 0.01., 'width' is invalid.
+    ✓ packages:width:  alphabetic string - should fail  >JSON parse error:
+    ✓ packages:width: 150.01 >max num: 150.01 - should fail  > 'width' must not exceed 150., 'width'  must not exceed 150., 'width' is invalid.
+    ✓ packages:width: zero: 0 - should fail  > 'width' must be at least 0.01.
+    ✓ packages:width: with 3 decimals: 120.111 - should fail  > 'width' must have at most 2 decimal places.
+    ✓ packages:height: required or not - should false > 'height' is required.
+    ✓ packages:height: null - should false  > 'height' is required.
+    ✓ packages:height: empty string  - should fail > 'height' is required.
+    ✓ packages:height: whitespace only - should fail > 'height' is required.
+    ✓ packages:height: special characters - should fail >JSON parse error
+    ✓ packages:height: 0 <min num: 0.01 - should fail  > 'height' must be at least 0.01., 'height' is invalid.
+    ✓ packages:height:  alphabetic string - should fail  >JSON parse error:
+    ✓ packages:height: 150.01 >max num: 150.01 - should fail  > 'height' must not exceed 150., 'height'  must not exceed 150., 'height' is invalid.
+    ✓ packages:height: zero: 0 - should fail  > 'height' must be at least 0.01.
+    ✓ packages:height: with 3 decimals: 120.111 - should fail  > 'height' must have at most 2 decimal places.
+    ✓ packages:weight: required or not - should false > 'weight' is required.
+    ✓ packages:weight: null - should false  > 'weight' is required.
+    ✓ packages:weight: empty string  - should fail > 'weight' is required.
+    ✓ packages:weight: whitespace only - should fail > 'weight' is required.
+    ✓ packages:weight: special characters - should fail >JSON parse error
+    ✓ packages:weight: 0 <min num: 0.01 - should fail  > 'weight' must be at least 0.01., 'weight' is invalid.
+    ✓ packages:weight:  alphabetic string - should fail  >JSON parse error:
+    ✓ packages:weight: 150.01 >max num: 150.01 - should fail  > 'weight' must not exceed 150., 'weight'  must not exceed 150., 'weight' is invalid.
+    ✓ packages:weight: zero: 0 - should fail  > 'weight' must be at least 0.01.
+    ✓ packages:weight: with 3 decimals: 120.111 - should fail  > 'weight' must have at most 2 decimal places.
+    ✓ packages:insuranceAmount: special characters - should fail >JSON parse error
+    ✓ packages:insuranceAmount: 99.99 <min num: 100 - should fail  > 'insuranceAmount' in package[0] must be between 100 and 25000
+    ✓ packages:insuranceAmount:  alphabetic string - should fail  >JSON parse error:
+    ✓ packages:insuranceAmount: 25000.01 >max num: 25000.01 - should fail  > 'insuranceAmount' in package[0] must be between 100 and 25000
+    ✓ packages:insuranceAmount: zero: 0 - should fail  > 'insuranceAmount' in package[0] must be between 100 and 25000
+    ✓ packages:insuranceAmount: with 3 decimals: 120.111 - should fail  > 'insuranceAmount' must have at most 2 decimal places.
+    ✓ packages:reference: special characters - should fail > 'reference' is invalid., 'reference' must contain only letters, numbers, spaces, or common punctuation., 'reference'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ packages:reference: 65>max 64 - should fail > 'reference' length must be between 0 and 64 characters., 'reference' is invalid., 'reference'  must not exceed 64 characters., 'reference' must not exceed 64 characters.
+    ✓ packages:description: special characters - should fail > 'description' is invalid., 'description' must contain only letters, numbers, spaces, or common punctuation., 'description'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ packages:description: 65>max 64 - should fail > 'description' length must be between 0 and 64 characters., 'description' is invalid., 'description'  must not exceed 64 characters., 'description' must not exceed 64 characters.
+    ✓ measurementSystem: required or not - should fail > 'measurementSystem' is missing.
+    ✓ measurementSystem: null - should fail > 'measurementSystem' is missing.
+    ✓ measurementSystem: empty string - should fail > 'measurementSystem' is missing., 'measurementSystem' must be Metric or Imperial.
+    ✓ measurementSystem: whitespace only - should fail > 'measurementSystem' is missing., 'measurementSystem' must be Metric or Imperial.
+    ✓ measurementSystem: special characters - should fail > 'measurementSystem' must be Metric or Imperial.
+    ✓ measurementSystem: mixed uppercase lowercase: meTric - should fail  > 'measurementSystem' must be Metric or Imperial.
+    ✓ measurementSystem: numeric string:12 - should fail  > 'measurementSystem' must be Metric or Imperial.
+    ✓ measurementSystem: alphabetic string - should fail  > 'measurementSystem' must be Metric or Imperial.
+    ✓ reference2: special characters - should fail > 'reference2' can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ reference2: 33>max 32 - should fail > 'reference2' length must be between 0 and 32 characters., 'reference2' is invalid., 'reference2'  must not exceed 32 characters., 'reference2' must not exceed 32 characters.
+    ✓ reference3: special characters - should fail > 'reference3' can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ reference3: 33>max 32 - should fail > 'reference3' length must be between 0 and 32 characters., 'reference3' is invalid., 'reference3'  must not exceed 32 characters., 'reference3' must not exceed 32 characters.
+    ✓ signatureOption: required or not - should fail > 'signatureOption' is missing. Only a value from [Signature,Adult,None] is expected.
+    ✓ signatureOption: null - should fail > 'signatureOption' is missing. Only a value from [Signature,Adult,None] is expected.
+    ✓ signatureOption: empty string - should fail > 'signatureOption' length must be between null and null characters., 'signatureOption' is missing. Only a value from [Signature,Adult,None] is expected., 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected., 'signatureOption' must contain only letters, numbers, spaces, or common punctuation.
+    ✓ signatureOption: whitespace only - should fail > 'signatureOption' is missing. Only a value from [Signature,Adult,None] is expected., 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected.
+    ✓ signatureOption: special characters - should fail > 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected., 'signatureOption' must contain only letters, numbers, spaces, or common punctuation., 'signatureOption'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ signatureOption: mixed uppercase lowercase: sigNATure - should fail  > 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected.
+    ✓ signatureOption: numeric string:12 - should fail  > 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected.
+    ✓ signatureOption: alphabetic string - should fail  > 'signatureOption' is invalid. Only a value from [Signature,Adult,None] is expected.
+    ✓ carrierList: required or not - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: null - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: empty string - should fail >JSON parse error
+    ✓ carrierList: whitespace only - should fail >JSON parse error
+    ✓ carrierList: special characters - should fail >JSON parse error
+    ✓ carrierList: null in array- should false > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: empty array- should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: undefined in array - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: empty string in array - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: whitespace only string in array - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: special characters in array - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: 1 invalid element in array: [ups] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: numeric string in array: [1234567] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: alphabetic string in array: [AKBKDKC] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: repeated elements: [UPS,UPS,UniUni] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: 1 invalid element with multi valid elements: [UPS,UniUni,Obiboxx] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ carrierList: 1 lowercase element: [UPS,uniuni] - should fail > 'carrierList' is invalid. A non-empty and non-repeated array from [UPS,UniUni,Obibox,FedEx,Canada Post,Purolator,FleetOptics] is expected.
+    ✓ pickupDate: special characters - should fail >JSON parse error
+    ✓ pickupDate: Non Leap year date - should fail >JSON parse error
+    ✓ pickupDate: invalid format1 :numeric string: input1 - should fail >JSON parse error
+    ✓ pickupDate: invalid format2 :2027/12/31 - should fail >JSON parse error
+    ✓ pickupDate: invalid format3 :12-31-2029 - should fail >JSON parse error
+    ✓ pickupDate: invalid format4 :alphabetic string: AKBKDKCKDKEKFGHIJKLM - should fail >JSON parse error
+    ✓ pickupDate: invalid month :2027-13-11 - should fail >JSON parse error
+    ✓ pickupDate: invalid day :2028-12-33 - should fail >JSON parse error
+    ✓ pickupLocation: special characters - should fail > 'pickupLocation' is invalid. Only a value from [Front Porch, Side Door, External Door, Basement Entrance] is expected., 'pickupLocation' must contain only letters, numbers, spaces, or common punctuation., 'pickupLocation'  can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ pickupLocation: mixed uppercase lowercase: frOnt PoRch - should fail  > 'pickupLocation' is invalid. Only a value from [Front Porch, Side Door, External Door, Basement Entrance] is expected.
+    ✓ pickupLocation: numeric string:12 - should fail  > 'pickupLocation' is invalid. Only a value from [Front Porch, Side Door, External Door, Basement Entrance] is expected.
+    ✓ pickupLocation: alphabetic string - should fail  > 'pickupLocation' is invalid. Only a value from [Front Porch, Side Door, External Door, Basement Entrance] is expected.
+    ✓ pickupNote: special characters - should fail > 'pickupNote' can only contain letters, numbers, French characters, and common punctuation marks.
+    ✓ pickupNote: 251>max 250 - should fail > 'pickupNote' length must be between 0 and 250 characters., 'pickupNote' is invalid., 'pickupNote'  must not exceed 250 characters., 'pickupNote' must not exceed 250 characters.
+
+
+  339 passing (3m)
+
+[mochawesome] Report JSON saved to /Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/reports/html/.jsons/mochawesome.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        339                                                                              │
+  │ Passing:      339                                                                              │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 minutes, 25 seconds                                                            │
+  │ Spec Ran:     TestSavedQuote.cy.js                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Start generate report process
+Read and merge jsons from "/Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/reports/html/.jsons"
+Copy media folder from "/Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/screenshots" to "/Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/reports/html/screenshots"
+Enhance report
+Create HTML report
+HTML report successfully created!
+/Users/aliacai/Desktop/testFile/shipengine-automatic-testing/cypress/reports/html/index.html
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  TestSavedQuote.cy.js                     03:25      339      339        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        03:25      339      339        -        -        -  
+
